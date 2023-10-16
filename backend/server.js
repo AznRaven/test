@@ -9,7 +9,7 @@ const cors = require('cors')
 // Setup our Express app
 const app = express()
 
-const PORT = 8080 
+const PORT = 8081 
 // Load the connectDB function
 const connectDB = require('./config/db')
 
