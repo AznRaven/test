@@ -25,10 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "client": "cd client && npm start",
-    "server": "cd backend && nodemon server",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "postinstall": "cd backend && npm install && cd ../client && npm install"
+    "client": "cd client && npm start"
   },
   "eslintConfig": {
     "extends": [
