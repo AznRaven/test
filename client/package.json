@@ -7,7 +7,7 @@
       "localhost",
       ".localhost"
     ],
-    "proxy": "http://t.aznraven:8080/"
+    "proxy": "https://localhost:8080/"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
