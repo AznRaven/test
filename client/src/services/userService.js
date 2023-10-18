@@ -13,8 +13,10 @@ export async function userLogin(user) {
         if (!response.ok) {
             const errorData = await response.json();
             console.log(errorData);
-            alert(errorData.error);
+            // alert(errorData.error);
             console.log('a');
+            window.location.href = '/register';
+
             return null;
         }
 
