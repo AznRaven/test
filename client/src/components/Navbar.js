@@ -13,7 +13,7 @@ function Navbar({ user, setUser }) {
         <>
           <li style={{ color: "black" }}>Welcome {user}!</li>
           <li className="posts-nav">
-            <Link to="/posts">Posts</Link>
+            <Link to="/posts">Waitlist</Link>
           </li>
           <li onClick={logout}>
             <Link to="/login">Logout</Link>
@@ -22,7 +22,7 @@ function Navbar({ user, setUser }) {
        : 
         <>
           <li className="posts-nav">
-            <Link to="/posts">Posts</Link>
+            <Link to="/posts">Waitlist</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>

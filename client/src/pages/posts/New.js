@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createPost } from "../../services/postService";
 
 function New({ user }) {
-  let subjectRef = useRef();
+//   let subjectRef = useRef();
   let maniRef = useRef();
   let pediRef = useRef();
   let waxRef = useRef();
@@ -12,7 +12,7 @@ function New({ user }) {
   async function handleSubmit(e) {
     e.preventDefault();
     let post = {
-      subject: subjectRef.current.value,
+    //   subject: subjectRef.current.value,
       mani: maniRef.current.value,
       pedi: pediRef.current.value,
       wax: waxRef.current.value,
