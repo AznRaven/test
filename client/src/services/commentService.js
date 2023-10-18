@@ -32,7 +32,7 @@ export async function getCommentFromPost(commentId, postId) {
 export async function updateCommentOfIdFromPost(comment, commentId, postId) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.put(`/comments/p/${postId}/c/${commentId}`, comment)
+        await axios.put(`https://t.aznraven.com/comments/p/${postId}/c/${commentId}`, comment)
     } catch(err) {
         console.log(err.message)
     }
