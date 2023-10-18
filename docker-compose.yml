@@ -1,0 +1,10 @@
+version: "3"
+services:
+  server:
+    image: s
+    ports:
+      - "8081:8081"
+  client:
+    image: c
+    ports:
+      - "3000:3000"

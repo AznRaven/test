@@ -2,7 +2,7 @@ import { customAxios, customAxiosWithAuth } from './api';
 
 export async function userLogin(user) {
     try {
-        const response = await fetch('http://localhost:8081/auth/login', {
+        const response = await fetch('https://t.aznraven.com/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export async function userLogin(user) {
 
 export async function userRegister(user) {
     try {
-        const response = await fetch('http://localhost:8081/auth/register', {
+        const response = await fetch('https://t.aznraven.com/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export async function userRegister(user) {
 
 export async function userInfo() {
     try {
-        const response = await fetch('http://localhost:8081/users', {
+        const response = await fetch('https://t.aznraven.com/users', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },

@@ -43,7 +43,7 @@ function Login({ setUser }) {
         <label htmlFor="username">Enter Your Phone Number</label>
         <br />
         <input
-          type="text"
+          type="number"
           id="phone"
           name="phone"
           onChange={handleChange}
