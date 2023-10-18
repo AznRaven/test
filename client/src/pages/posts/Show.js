@@ -54,7 +54,7 @@ function Show({ user }) {
                 <div className="a-post">
                     <h2>{post.subject}</h2>
                     <h5 style={{ opacity: '.3'}}>Posted by {post.user} on {new Date(post.createdAt).toLocaleDateString()} at {new Date(post.createdAt).toLocaleTimeString()}</h5>
-                    <div className='p-body'>{post.body}</div><br /><br />
+                    <div className='p-body'>{post.mani}</div><br /><br />
 
                     {
                         post.comments?.length ?
@@ -63,7 +63,7 @@ function Show({ user }) {
                             <div>{post.comments.map((comment, i) => 
                                 <div key={i} className="comm">
                                     <div>{comment.user}</div>
-                                    <div>{comment.body}</div>
+                                    <div>{comment.mani}</div>
                                     {comment.user === user &&
                                         <>
                                             <button onClick={() => handleDeleteComment(comment)}>X</button>

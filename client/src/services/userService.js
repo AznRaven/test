@@ -41,6 +41,7 @@ export async function userRegister(user) {
         });
 
         if (!response.ok) {
+            console.log('not ok')
             const errorData = await response.json();
             console.log(errorData);
             alert(errorData.error);

@@ -12,9 +12,9 @@ form {
   flex-direction: column;
   padding: 50px;
 }
-input {
+/* input {
   margin: 20px;
-}
+} */
 button {
   margin-top: 50px;
   width: 100px;
