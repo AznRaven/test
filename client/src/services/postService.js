@@ -3,7 +3,7 @@ import { customAxios, customAxiosWithAuth } from './api'
 export async function getAllPosts() {
     const axios = customAxios()
     try {
-        const response = await axios.get('/posts')
+        const response = await axios.get('https://t.aznraven.com/posts')
         return response.data
     } catch(err) {
         console.log(err.message)
