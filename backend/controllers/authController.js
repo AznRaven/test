@@ -43,7 +43,9 @@ async function login(req, res) {
         console.log('test')
 
         if (!foundUser) {
-            return res.status(404).json({ error: 'No such user exists' })
+            // return res.status(404).json({ error: 'No such user exists' })
+            return res.redirect('/register');
+
         }
 
         // 2. Check if password provided by user matches the one in database
