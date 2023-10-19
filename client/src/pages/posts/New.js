@@ -30,11 +30,11 @@ function New({ user, setUser }) {
   }
 
   return (
-    <div>
+    <div className="post-new">
       <h1 className="text-center">Service Selection</h1>
       <br />
       <br />
-      <div className="container  d-flex col-12">
+      <div className="container container-fluid d-flex col-12">
         <div className="col-12 col-sm-10  mx-auto">
           <form onSubmit={handleSubmit}>
             <div className="row">
