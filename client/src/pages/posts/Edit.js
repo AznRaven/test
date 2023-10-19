@@ -1,51 +1,83 @@
-import { useEffect, useState, useRef } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
-import { getPost, updatePost } from '../../services/postService'
+import { useEffect, useState, useRef } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { getPost, updatePost } from "../../services/postService";
 
 function Edit() {
+  const [post, setPost] = useState({});
 
-    const [post, setPost] = useState({})
+  const navigate = useNavigate();
+  const params = useParams();
 
-    const navigate = useNavigate()
-    const params = useParams()
+  let maniRef = useRef();
+  let pediRef = useRef();
+  let waxRef = useRef();
 
-    const bodyRef = useRef()
-    const subjectRef = useRef()
+  useEffect(() => {
+    getPost(params.id).then((data) => setPost(data));
+  }, [params.id]);
+console.log(post)
+  async function handleSubmit(e) {
+    e.preventDefault();
+    let updatedPost = {
+        mani: maniRef.current.value,
+        pedi: pediRef.current.value,
+        wax: waxRef.current.value,
+    };
+    await updatePost(post._id, updatedPost);
+    navigate(`/posts/${post._id}`);
+  }
 
-    useEffect(() => {
-        getPost(params.id).then(data => setPost(data))
-    }, [params.id])
-
-    async function handleSubmit(e) {
-        e.preventDefault()
-        let updatedPost = {
-            subject: subjectRef.current.value,
-            body: bodyRef.current.value
-        }
-        await updatePost(post._id, updatedPost)
-        navigate(`/posts/${post._id}`)
-    }
-
-    return ( 
-        <div>
-            <h1>Edit Post</h1>
-            <div className='buttons' style={{ flexDirection: 'column' }}>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="nme">Subject:</label><br />
-                    <input type="text" id="nme" ref={subjectRef} defaultValue={post.subject} /><br /><br />
-
-                    <label htmlFor="clr">Body:</label><br />
-                    <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={post.body} /><br /><br />
-
-                    <button>Submit</button>
-                </form>
-                <Link to={`/posts/${post._id}`}>
-                    <button>Back</button>
-                </Link>
-                
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Edit Post</h1>
+      <div className="buttons" style={{ flexDirection: "column" }}>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h1>Edit Service Selectio</h1>
+            <form onSubmit={handleSubmit}>
+              <label for="mani">Manicures</label>
+              <select
+                class="form-select"
+                ref={maniRef}
+                aria-label="Default select example"
+              >
+                <option selected>{post.mani}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <label for="mani">Pedicures</label>
+              <select
+                class="form-select"
+                ref={pediRef}
+                aria-label="Default select example"
+              >
+                <option selected>{post.pedi}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <label for="mani">Wax</label>
+              <select
+                class="form-select"
+                ref={waxRef}
+                aria-label="Default select example"
+              >
+                <option selected>{post.wax}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <button>Submit</button>
+            </form>
+          </div>
+        </form>
+        <Link to={`/posts/${post._id}`}>
+          <button>Back</button>
+        </Link>
+      </div>
+    </div>
+  );
 }
 
 export default Edit;

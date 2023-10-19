@@ -3,19 +3,23 @@ import { useNavigate } from "react-router-dom";
 import { createPost } from "../../services/postService";
 
 function New({ user }) {
-//   let subjectRef = useRef();
   let maniRef = useRef();
+  let maniTechRef = useRef();
   let pediRef = useRef();
+  let pediTechRef = useRef();
   let waxRef = useRef();
+  let waxTechRef = useRef();
   let navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
     let post = {
-    //   subject: subjectRef.current.value,
       mani: maniRef.current.value,
+      maniTech: maniTechRef.current.value,
       pedi: pediRef.current.value,
+      pediTech: pediTechRef.current.value,
       wax: waxRef.current.value,
+      waxTech: waxTechRef.current.value,
       user,
     };
     await createPost(post);
@@ -24,54 +28,98 @@ function New({ user }) {
 
   return (
     <div>
-      <h1>Service Selection</h1>
-      <form onSubmit={handleSubmit}>
-        {/* <label htmlFor="nme">Subject:</label>
-        <br />
-        <input type="text" id="nme" ref={subjectRef} />
-        <br />
-        <br />
+      <h1 className="text-center">Service Selection</h1>
+      <br />
+      <br />
+      <div className="container border border-danger d-flex col-12">
+        <div className="col-12 col-sm-6 border border-danger mx-auto">
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              {/* Manicure */}
+              <div className="col">
+                <label for="mani">Manicures</label>
+                <select
+                  class="form-select"
+                  ref={maniRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>None</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-        <label htmlFor="clr">Mani:</label>
-        <br />
-        <textarea id="clr" cols="30" rows="10" ref={maniRef} />
-        <br />
-        <br /> */}
-        <label for="mani">Manicures</label>
-        <select
-          class="form-select"
-          ref={maniRef}
-          aria-label="Default select example"
-        >
-          <option selected>None</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <label for="mani">Pedicures</label>
-        <select
-          class="form-select"
-          ref={pediRef}
-          aria-label="Default select example"
-        >
-          <option selected>None</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <label for="mani">Wax</label>
-        <select
-          class="form-select"
-          ref={waxRef}
-          aria-label="Default select example"
-        >
-          <option selected>None</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <button>Submit</button>
-      </form>
+                <label for="maniTech">Mani Tech</label>
+                <select
+                  class="form-select"
+                  ref={maniTechRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>Any</option>
+                  <option value="Tech 1">Tech 1</option>
+                  <option value="Tech 2">Tech 2</option>
+                  <option value="Tech 3">Tech 3</option>
+                </select>
+              </div>
+              {/* Pedicure */}
+              <div className="col">
+                <label for="pedi">Pedicures</label>
+                <select
+                  class="form-select"
+                  ref={pediRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>None</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label for="pediTech">Pedi Tech</label>
+                <select
+                  class="form-select"
+                  ref={pediTechRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>Any</option>
+                  <option value="Tech 1">Tech 1</option>
+                  <option value="Tech 2">Tech 2</option>
+                  <option value="Tech 3">Tech 3</option>
+                </select>
+              </div>
+              {/* Wax */}
+              <div className="col">
+                <label for="wax">Wax</label>
+                <select
+                  class="form-select"
+                  ref={waxRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>None</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label for="waxTech">Wax Tech</label>
+                <select
+                  class="form-select"
+                  ref={waxTechRef}
+                  aria-label="Default select example"
+                >
+                  <option selected>Any</option>
+                  <option value="Tech 1">Tech 1</option>
+                  <option value="Tech 2">Tech 2</option>
+                  <option value="Tech 3">Tech 3</option>
+                </select>
+              </div>
+            </div>
+
+            
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

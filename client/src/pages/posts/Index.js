@@ -14,10 +14,10 @@ function Index({ user }) {
   }, []);
   console.log(posts);
   return (
-    <div>
-      <h1>Index View</h1>
+    <div className="col col-10 border border-danger mx-auto">
+      <h1 className="text-center">Customer Wait List</h1>
       <div id="posts">
-        <table class="table table-striped ">
+        <table class="table table-striped text-center">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -40,13 +40,16 @@ function Index({ user }) {
               <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{post.user}</td>
-                <td>{post.mani}</td>
-                <td>{post.pedi}</td>
-                <td>{post.wax}</td>
+                <td>{post.mani} <br /> {post.maniTech} </td>
+                <td>{post.pedi} <br /> {post.pediTech}</td>
+                <td>{post.wax} <br /> {post.waxTech}</td>
                 <td>
-                  <Link to={`/posts/${post._id}`} key={index}>
+                  {/* <Link to={`/posts/${post._id}`} key={index}>
                     Edit
-                  </Link>
+                  </Link> */}
+                  <Link to={`/posts/${post._id}/edit`}>
+                                    <button>Edit</button>
+                                </Link>
                 </td>
                 {user == 'admin' && <td>Delete</td>}
               </tr>

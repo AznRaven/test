@@ -16,7 +16,7 @@ router.get('/', postControl.index)
 router.delete('/:id', authorize, confirmUserAccess, postControl.delete)
 
 // update
-router.put('/:id', authorize, confirmUserAccess, postControl.update)
+router.put('/:id/edit', authorize, confirmUserAccess, postControl.update)
 
 // create
 router.post('/', authorize, postControl.create)
