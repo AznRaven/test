@@ -34,12 +34,12 @@ function New({ user, setUser }) {
       <h1 className="text-center">Service Selection</h1>
       <br />
       <br />
-      <div className="container border border-danger d-flex col-12">
-        <div className="col-12 col-sm-6 border border-danger mx-auto">
+      <div className="container  d-flex col-12">
+        <div className="col-12 col-sm-10  mx-auto">
           <form onSubmit={handleSubmit}>
             <div className="row">
               {/* Manicure */}
-              <div className="col">
+              <div className="col-12 col-md-4 my-4">
                 <label for="mani">Manicures</label>
                 <select
                   class="form-select"
@@ -65,7 +65,7 @@ function New({ user, setUser }) {
                 </select>
               </div>
               {/* Pedicure */}
-              <div className="col">
+              <div className="col-12 col-md-4 my-4">
                 <label for="pedi">Pedicures</label>
                 <select
                   class="form-select"
@@ -91,7 +91,7 @@ function New({ user, setUser }) {
                 </select>
               </div>
               {/* Wax */}
-              <div className="col">
+              <div className="col-12 col-md-4 my-4">
                 <label for="wax">Wax</label>
                 <select
                   class="form-select"
