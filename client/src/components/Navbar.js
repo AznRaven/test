@@ -13,7 +13,7 @@ function Navbar({ user, setUser }) {
         <>
           <li style={{ color: "black" }}>Welcome {user}!</li>
           <li className="posts-nav">
-            <Link to="/posts">Waitlist</Link>
+            <Link to="/posts">Wait List</Link>
           </li>
           <li onClick={logout}>
             <Link to="/login">Logout</Link>

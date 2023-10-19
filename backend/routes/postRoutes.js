@@ -13,7 +13,8 @@ router.get('/seed', postControl.seed)
 router.get('/', postControl.index)
 
 // delete
-router.delete('/:id', authorize, confirmUserAccess, postControl.delete)
+// router.delete('/:id', authorize, confirmUserAccess, postControl.delete)
+router.delete('/:id', confirmUserAccess, postControl.delete)
 
 // update
 router.put('/:id/edit', authorize, confirmUserAccess, postControl.update)

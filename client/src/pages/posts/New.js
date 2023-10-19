@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPost } from "../../services/postService";
 
-function New({ user }) {
+function New({ user, setUser }) {
   let maniRef = useRef();
   let maniTechRef = useRef();
   let pediRef = useRef();
@@ -23,7 +23,10 @@ function New({ user }) {
       user,
     };
     await createPost(post);
-    navigate("/posts");
+    // navigate("/posts");
+    localStorage.removeItem("token");
+    setUser({});
+    navigate("/login")
   }
 
   return (
@@ -115,7 +118,6 @@ function New({ user }) {
               </div>
             </div>
 
-            
             <button>Submit</button>
           </form>
         </div>
